@@ -1,0 +1,10 @@
+Full name; Email
+Sarah White;sarah.white@example.com
+James Miller;james.m@example.com
+Michael Brown;michael.b@example.com
+Daniel Smith;daniel.s@example.com
+Olivia Jones;olivia.j@email.com
+Sarah White;sarah.white@example.com
+James Miller;james.m@example.com
+Michael Brown;michael.b@example.com
+Daniel Smith;daniel.s@example.com

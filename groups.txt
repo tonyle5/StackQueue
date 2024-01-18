@@ -1,0 +1,13 @@
+Group name;Number of people;Special seating needed;Special seating info;Promotion allowed;Full name;Email
+Business Conference;50;1;wheel chair;0;;
+Family Picnic;20;0;;0;;
+Wedding Party;100;1;High chair;1;Sarah White;sarah.white@example.com
+Team Building Workshop;30;0;;1;James Miller;james.m@example.com
+Friends Night Out;15;1;High chair;0;;
+Tech Seminar;80;1;High chair;1;Michael Brown;michael.b@example.com
+School Reunion;40;0;;0;;
+Product Launch;60;1;High chair;1;Daniel Smith;daniel.s@example.com
+Book Club Meeting;25;0;;1;Olivia Jones;olivia.j@email.com
+Birthday Celebration;10;1;High chair;0;;
+dsf;2;0;;0;;
+d;33;1;sdfsdf;0;;
