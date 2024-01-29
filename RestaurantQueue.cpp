@@ -166,10 +166,3 @@ bool RestaurantQueue::writeData(const char fileName[]) {
 
   return true;
 }
-
-// Displays the list of groups.
-// void RestaurantQueue::displayList(Node* node) {
-//   if (node && node != this->rear) {
-//     this->displayList(node->next);
-//   }
-// }

@@ -90,15 +90,6 @@ class RestaurantQueue {
      * @return     Whether the data is written successfully.
      */
     bool writeData(const char fileName[]);
-
-    // private:
-    //   /**
-    //    * Displays the list of groups.
-    //    *
-    //    * @param node The node to start displaying from.
-    //    * @return void
-    //    */
-    //   void displayList(Node* node);
 };
 
 #endif
