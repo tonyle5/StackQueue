@@ -1,7 +1,7 @@
 /******************************************************************************
 # Author:           Tony Le
 # Project:          Project 2
-# Date:             Jan 18, 2024
+# Date:             Jan 29, 2024
 # Description:      This program will help you keeping track of groups in
 #                   line at the restaurant, and how long it will take before
 #                   they get a table.

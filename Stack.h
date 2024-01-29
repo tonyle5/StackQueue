@@ -129,6 +129,14 @@ class Stack {
      * @return void
      */
     void expand();
+
+    /**
+     * Delete the stack recursively.
+     *
+     * @param position The position of the customer to delete.
+     * @return void
+     */
+    void Stack::deleteR(int position);
 };
 
 #endif

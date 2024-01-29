@@ -23,14 +23,22 @@ Stack::~Stack() {
 // Destroys the stack.
 void Stack::destroy() {
   if (this->aStack) {
-    for (int i = 0; i < this->top; i++) {
-      if (this->aStack[i]) {
-        delete this->aStack[i];
-      }
-    }
-
+    this->deleteR(0);
     delete[] this->aStack;
   }
+}
+
+// Delete the stack recursively.
+void Stack::deleteR(int position) {
+  if (top == this->top) {
+    return;
+  }
+
+  if (this->aStack[position]) {
+    delete this->aStack[position];
+  }
+
+  deleteR(position + 1);
 }
 
 // Assignment operator
