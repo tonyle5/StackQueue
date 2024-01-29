@@ -1,5 +1,6 @@
 #include "Stack.h"
 
+// Default constructor
 Stack::Stack(int capacity) : top(0) {
   this->curCapacity = capacity;
   aStack = new PersonalInfo*[this->curCapacity];
@@ -9,14 +10,17 @@ Stack::Stack(int capacity) : top(0) {
   }
 }
 
+// Copy constructor
 Stack::Stack(const Stack& aStack) : aStack(nullptr), top(0) {
   *this = aStack;
 }
 
+// Destructor
 Stack::~Stack() {
   destroy();
 }
 
+// Destroys the stack.
 void Stack::destroy() {
   if (this->aStack) {
     for (int i = 0; i < this->top; i++) {
@@ -29,6 +33,7 @@ void Stack::destroy() {
   }
 }
 
+// Assignment operator
 const Stack& Stack::operator=(const Stack& stackSrc) {
   if (this != &stackSrc) {
     this->destroy();
@@ -46,6 +51,7 @@ const Stack& Stack::operator=(const Stack& stackSrc) {
   return *this;
 }
 
+// Overloads the << operator to display Stack.
 ostream& operator<<(ostream& out, const Stack& srcStack) {
   if (srcStack.top != 0) {
     for (int i = 0; i < srcStack.top; i++) {
@@ -56,6 +62,7 @@ ostream& operator<<(ostream& out, const Stack& srcStack) {
   return out;
 }
 
+// Adds a customer to the stack.
 void Stack::push(const PersonalInfo& personalInfo) {
   if (this->curCapacity == top) {
     expand();
@@ -65,6 +72,7 @@ void Stack::push(const PersonalInfo& personalInfo) {
   this->top++;
 }
 
+// Removes the top customer from the stack.
 bool Stack::pop(PersonalInfo& personalInfo) {
   if (this->top == 0) {
     return false;
@@ -77,6 +85,7 @@ bool Stack::pop(PersonalInfo& personalInfo) {
   return true;
 }
 
+// Views the top customer without removing them.
 bool Stack::peek(PersonalInfo& personalInfo) {
   if (this->top == 0) {
     return false;
@@ -87,14 +96,17 @@ bool Stack::peek(PersonalInfo& personalInfo) {
   return true;
 }
 
+// Get the number of customers in the stack.
 int Stack::getSize() const {
   return this->top;
 }
 
+// Checks if the stack is empty.
 bool Stack::isEmpty() const {
   return this->top == 0;
 }
 
+// Loads customer data from a file into the stack.
 int Stack::loadData(const char* fileName) {
   ifstream inFile;
   inFile.open(fileName);
@@ -123,6 +135,7 @@ int Stack::loadData(const char* fileName) {
   return this->top;
 }
 
+// Writes customer data from the stack to a file.
 bool Stack::writeData(const char* fileName) const {
   ofstream outFile;
   outFile.open(fileName);
@@ -139,6 +152,7 @@ bool Stack::writeData(const char* fileName) const {
   return true;
 }
 
+// Expands the stack.
 void Stack::expand() {
   this->curCapacity *= GROWTH_FACTOR;
   PersonalInfo** tempStack = new PersonalInfo*[this->curCapacity];
