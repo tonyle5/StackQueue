@@ -18,6 +18,7 @@ int main() {
   RestaurantQueue restaurantQueue;
   Stack stack(INIT_CAP);
   int option = -1;
+
   int groupLoadResult = restaurantQueue.loadData(DATA_QUEUE, stack);
   int stackLoadResult = stack.loadData(DATA_STACK);
 
@@ -40,32 +41,20 @@ int main() {
   }
 }
 
-// Name:   welcome()
-// Desc:   This function prints a welcome message.
-// Input:  None
-// Output: Welcome message
-// Return: None
+// This function prints a welcome message.
 void welcome() {
   cout << "Welcome to Line program!" << endl;
   cout << "This program will help you keeping track of restaurant wait list.";
   cout << endl << endl;
 }
 
-// Name:   goodbye()
-// Desc:   This function prints a goodbye message.
-// Input:  None
-// Output: Goodbye message
-// Return: None
+// This function prints a goodbye message.
 void goodbye() {
   cout << endl;
   cout << "Thank you for using the program!!";
 }
 
-// Name:   displayMenu()
-// Desc:   This function displays the menu to the user.
-// Input:  None
-// Output: The menu.
-// Return: None
+// This function displays the menu to the user.
 void displayMenu() {
   cout << "Pick an option from below: " << endl << endl;
   cout << "1. Add a new group to the queue" << endl;
@@ -83,13 +72,8 @@ void displayMenu() {
   cout << endl;
 }
 
-// Name:   addGroup()
-// Desc:   This function prompts the user to enter the group information and
-// adds it to
-//         the restaurant queue.
-// Input:  RestaurantQueue& restaurantQueue
-// Output: Prompts the user to enter the group information
-// Return: None
+// This function prompts the user to enter the group information and adds it
+// to the restaurant queue.
 void addGroup(RestaurantQueue& restaurantQueue, Stack& stack) {
   char groupName[STR_SIZE];
   int numPeople;
@@ -140,6 +124,7 @@ void addGroup(RestaurantQueue& restaurantQueue, Stack& stack) {
   cout << endl;
 }
 
+// This function peeks at the first group that arrives in the queue.
 void peekQueue(RestaurantQueue& restaurantQueue) {
   Group group;
 
@@ -153,6 +138,7 @@ void peekQueue(RestaurantQueue& restaurantQueue) {
   cout << endl << endl;
 }
 
+// This function removes the most recent (or top) customer in the stack.
 void popCustomer(Stack& stack) {
   ofstream outFile;
   outFile.open(DATA_POPPED_CUSTOMER, std::ios_base::app);
@@ -175,6 +161,7 @@ void popCustomer(Stack& stack) {
   outFile.close();
 }
 
+// This function peeks at the most recent (or top) customer in the stack.
 void peekCustomer(Stack& stack) {
   PersonalInfo personalInfo;
 
@@ -188,12 +175,7 @@ void peekCustomer(Stack& stack) {
   cout << endl << endl;
 }
 
-// Name:   exeOption()
-// Desc:   This function calls the different functions based on the input
-//         option.
-// Input:  char option, RestaurantQueue& restaurantQueue
-// Output: None
-// Return: None
+// This function executes the option that the user chooses.
 void exeOption(int option, RestaurantQueue& restaurantQueue, Stack& stack) {
   switch (option) {
     case 1:
