@@ -1,9 +1,5 @@
-/* Name: Tony Le
- * Class: CS260 - 12720
- * Project: #1
- * Date: Jan 13, 2024
- * Description: This is the header file for a utility file, which contains
- * common functions, constants, and libraries.
+/* This is the header file for a utility file, which contains common
+ * functions, constants, and libraries.
  */
 
 #ifndef _MYUTIL_
@@ -17,25 +13,33 @@
 
 using namespace std;
 
+/**
+ * Error code
+ */
 const int ERROR = -1;
 
+/**
+ * The length of a string.
+ */
 const int STR_SIZE = 101;
 
+/**
+ * Initial capacity of an array.
+ */
 const int INIT_CAP = 10;
 
+/**
+ * The growth factor of an array.
+ */
 const int GROWTH_FACTOR = 5;
 
-// This function reads an input from the user and validates if the number is
-// an integer and within a range.
-template <typename T>
-void getNumber(const char prompt[], const char errorMsg[], T from, T to,
-               T& num);
-
-// This function frees the memory allocated for a dynamic array.
-template <typename T>
-void freeDynamicArray(T*& arr);
-
-// This function copy a dynamic array to a new array.
+/**
+ * This function copy a dynamic array to a new array.
+ *
+ * @param srcArr The source array.
+ * @param destArr The destination array.
+ * @return void
+ */
 void setCharArr(const char*& srcArr, char*& destArr);
 
 #include "myUtil.inl"
