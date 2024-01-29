@@ -1,16 +1,16 @@
 #include "RestaurantQueue.h"
 
-// Constructor for RestaurantQueue
+// Default constructor
 RestaurantQueue::RestaurantQueue() : rear(nullptr), size(0) {}
 
-// Destructor for RestaurantQueue
+// Destructor
 RestaurantQueue::~RestaurantQueue() {
   while (this->size) {
     this->dequeue();
   }
 }
 
-// Function to add a group to the waiting list (enqueue)
+// Adds a group to the waiting list.
 void RestaurantQueue::enqueue(const Group& group) {
   Node* newNode = new Node;
   newNode->data = group;
@@ -29,7 +29,7 @@ void RestaurantQueue::enqueue(const Group& group) {
   this->size++;
 }
 
-// Function to remove the front group from the waiting list (dequeue)
+// Removes the front group from the waiting list.
 void RestaurantQueue::dequeue() {
   if (!this->rear) {
     // The list is empty
@@ -47,7 +47,7 @@ void RestaurantQueue::dequeue() {
   }
 }
 
-// Function to view the front group without removing it
+// Views the front group without removing it.
 bool RestaurantQueue::peek(Group& aGroup) const {
   if (this->size == 0) {
     return false;
@@ -59,7 +59,7 @@ bool RestaurantQueue::peek(Group& aGroup) const {
   return true;
 }
 
-// Function to display the waiting list along with the number in line
+// Displays the waiting list along with the number in line.
 void RestaurantQueue::display() const {
   if (!rear) {
     cout << "Waiting list is empty!" << endl << endl;
@@ -83,18 +83,10 @@ void RestaurantQueue::display() const {
   cout << endl;
 }
 
-void RestaurantQueue::displayList(Node* node) {
-  if (node && node != this->rear) {
-    this->displayList(node->next);
-  }
-}
-
-// Name:   SongList::loadData()
-// Desc:   This function loads data from a text file.
-// Input:  const char fileName[]
-// Output: None
-// Return: None
-int RestaurantQueue::loadData(const char fileName[], Stack& stack) {
+// Loads group data from a file into the queue. If there are any groups
+// would like to receive coupons and other promotional materials, they are
+// added to the stack.
+int RestaurantQueue::loadData(const char fileName[], const Stack& stack) {
   ifstream inFile;
   inFile.open(fileName);
 
@@ -149,11 +141,7 @@ int RestaurantQueue::loadData(const char fileName[], Stack& stack) {
   return this->size;
 }
 
-// // Name:   SongList::writeData()
-// // Desc:   This function writes data to a text file.
-// // Input:  const char fileName[]
-// // Output: None
-// // Return: None
+// Writes group data from the queue to a file.
 bool RestaurantQueue::writeData(const char fileName[]) {
   ofstream outFile;
   outFile.open(fileName);
@@ -178,3 +166,10 @@ bool RestaurantQueue::writeData(const char fileName[]) {
 
   return true;
 }
+
+// Displays the list of groups.
+// void RestaurantQueue::displayList(Node* node) {
+//   if (node && node != this->rear) {
+//     this->displayList(node->next);
+//   }
+// }
