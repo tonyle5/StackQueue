@@ -136,7 +136,7 @@ class Stack {
      * @param position The position of the customer to delete.
      * @return void
      */
-    void Stack::deleteR(int position);
+    void deleteR(int position);
 };
 
 #endif

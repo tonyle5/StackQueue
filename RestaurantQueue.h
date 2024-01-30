@@ -81,7 +81,7 @@ class RestaurantQueue {
      * @return     The number of groups loaded, returns ERROR in case the data
      *             can not be loaded.
      */
-    int loadData(const char fileName[], const Stack& stack);
+    int loadData(const char fileName[], Stack& stack);
 
     /**
      * Writes group data from the queue to a file.

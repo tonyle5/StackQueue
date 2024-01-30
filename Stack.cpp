@@ -29,16 +29,16 @@ void Stack::destroy() {
 }
 
 // Delete the stack recursively.
-void Stack::deleteR(int position) {
-  if (top == this->top) {
+void Stack::deleteR(int index) {
+  if (index == this->top) {
     return;
   }
 
-  if (this->aStack[position]) {
-    delete this->aStack[position];
+  if (this->aStack[index]) {
+    delete this->aStack[index];
   }
 
-  deleteR(position + 1);
+  deleteR(index + 1);
 }
 
 // Assignment operator

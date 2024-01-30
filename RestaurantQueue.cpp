@@ -86,7 +86,7 @@ void RestaurantQueue::display() const {
 // Loads group data from a file into the queue. If there are any groups
 // would like to receive coupons and other promotional materials, they are
 // added to the stack.
-int RestaurantQueue::loadData(const char fileName[], const Stack& stack) {
+int RestaurantQueue::loadData(const char fileName[], Stack& stack) {
   ifstream inFile;
   inFile.open(fileName);
 
@@ -124,7 +124,8 @@ int RestaurantQueue::loadData(const char fileName[], const Stack& stack) {
     inFile.getline(email, STR_SIZE, '\n');
 
     if (isPromoAllowed) {
-      stack.push(PersonalInfo(fullName, email));
+      const PersonalInfo personalInfo(fullName, email);
+      stack.push(personalInfo);
     }
 
     personalInfo = PersonalInfo(fullName, email);
